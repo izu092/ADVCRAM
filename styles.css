@@ -1,0 +1,89 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Inter', sans-serif; /* Sets Inter as the default font */
+}
+
+body {
+    background-image: url('images/Bg_1.png'); /* Ensure the file path is correct */
+    background-size: 100% 100%; /* Makes the image fit within the screen */
+    background-repeat: no-repeat; 
+    background-position: center;
+    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+}
+
+.auth-container {
+    position: fixed; /* Keeps the buttons visible */
+    top: 25px; /* Distance from the top */
+    right: 30px; /* Aligns both Sign In and Sign Up with the right edge */
+    display: flex; /* Places the Sign In and Sign Up side by side */
+    align-items: center; /* Vertically aligns both items */
+    gap: 25px; /* Adds spacing between the two elements */
+}
+
+.sign-in-link {
+    font-size: 12px;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+    text-decoration: none; /* Removes underline */
+    cursor: pointer;
+}
+
+.sign-in-link:hover {
+    color: #52B9F3; /* Adds a hover effect */
+}
+
+.sign-up-button {
+    padding: 10px 20px; /* Adds some spacing inside the button */
+    background-color: #52B9F3; /* Button background color */
+    color: white; /* Button text color */
+    font-size: 12px; /* Text size */
+    font-family: 'Inter', sans-serif;
+    font-weight: 400; /* Text weight */
+    border: none; /* Removes default border */
+    border-radius: 30px; /* Adds rounded corners */
+    cursor: pointer; /* Adds a pointer cursor on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
+
+.sign-up-button:hover {
+    background-color: #035c90; /* Slightly darken the button on hover */
+}
+
+.nav-container {
+    position: fixed; /* Keeps it visible at the top */
+    top: 35px; /* Distance from the top */
+    left: 50%; /* Centers the container horizontally */
+    transform: translateX(-50%); /* Adjusts for perfect centering */
+    display: flex; /* Places the links in a row */
+    gap: 45px; /* Adds space between the links */
+    z-index: 1; /* Ensures it stays above other elements */
+}
+
+.nav-link {
+    font-size: 12px; /* Font size for the links */
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    color: #ffffff; /* White text */
+    text-decoration: none; /* Removes underline */
+    cursor: pointer;
+}
+
+.nav-link:hover {
+    color: #52B9F3; /* Hover effect for interactivity */
+}
+
+.image-container {
+    position: fixed; /* Keeps the image visible at the top left */
+    top: 30px; /* Aligns with the top of the page */
+    left: 35px; /* Aligns the image on the left side */
+    z-index: 1; /* Ensures it stays above other content */
+}
+
+.logo-image {
+    width: 90px; /* Adjust width to fit your design */
+    height: auto; /* Maintains the image's aspect ratio */
+}
+
+
