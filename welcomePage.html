@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>PMMS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <title>Welcome Page</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .background {
+      background-image: url('images/Welcome Page.png'); /* Replace with your image path */
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      width: 100%;
+      position: relative;
+    }
+
+    .top-left-buttons {
+      position: absolute;
+      top: 35px;
+      right: 40px;
+      display: flex;
+      gap: 20px;
+    }
+
+    .top-left-buttons button {
+        padding: 13px 30px; /* Adds some spacing inside the button */
+        background-color: #52B9F3; /* Button background color */
+        color: #ffffff; /* Button text color */
+        font-size: 15px; /* Text size */
+        font-family: 'Inter', sans-serif;
+        font-weight: 600; /* Text weight */
+        border: none; /* Removes default border */
+        border-radius: 30px; /* Adds rounded corners */
+        cursor: pointer; /* Adds a pointer cursor on hover */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    }
+
+    .top-left-buttons button:hover {
+      background-color: #035c90;
+    }
+  </style>
+</head>
+<body>
+  <div class="background">
+    <div class="top-left-buttons">
+      <button onclick="location.href='loginPage.html'">Log In</button>
+      <button onclick="location.href='registerPage.html'">Register</button>
+    </div>
+  </div>
+</body>
+</html>

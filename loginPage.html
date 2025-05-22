@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In</title>
+    <title>Log In</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
     <style>
         html, body {
             height: 100%;
@@ -21,13 +22,13 @@
             padding: 20px; /* Adds space inside the container */
             max-width: 600px; /* Maximum width for the container */
             width: 100%; /* Makes the container responsive */
-            border-radius: 10px; /* Rounded corners */
+            border-radius: 16px; /* Rounded corners */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
             text-align: center; /* Centers text and image */
         }
 
         .sign-in-container img {
-            margin-top: 15px;
+            margin-top: 10px;
             max-width: 50%; /* Ensures image is responsive */
             height: auto; /* Maintains aspect ratio */
         }
@@ -36,23 +37,23 @@
             font-size: 14px; /* Text size */
             font-weight: 400; /* Bold text */
             font-family: 'Inter', sans-serif;
-            color: #788BA5; /* Text color */
-            margin-top: 40px; /* Adds space between image and text */
+            color: #4b5768; /* Text color */
+            margin-top: 30px; /* Adds space between image and text */
         }
 
         .horizontal-line {
             width: 390px; /* Sets the width of the line */
             height: 3px; /* Sets the height of the line */
             background-color: #dee4ed; /* Sets the line color */
-            margin: 20px auto 0; /* Centers the line and adds spacing */
+            margin: 15px auto 0; /* Centers the line and adds spacing */
         }
 
         .text-input-row.id-input-row {
-            margin-top: 40px; /* Creates space between the line and ID container */
+            margin-top: 27px; /* Creates space between the line and ID container */
         }
 
         .text-input-row {
-            margin-top: 25px; /* Adds spacing above the input row */
+            margin-top: 20px; /* Adds spacing above the input row */
         }
 
         .text-input {
@@ -64,7 +65,7 @@
             font-weight: 400; /* Normal text weight */
             color: #333333; /* Text color */
             border: 1px solid #dee4ed; /* Border styling */
-            border-radius: 5px; /* Rounded corners */
+            border-radius: 10px; /* Rounded corners */
             outline: none; /* Removes default focus outline */
         }
 
@@ -86,7 +87,7 @@
 
         .forgot-password-link {
             display: block; /* Makes the link behave like a block element */
-            margin-top: 15px; /* Adds space above the link */
+            margin-top: 25px; /* Adds space above the link */
             font-size: 14px; /* Text size */
             font-weight: 400; /* Normal text weight */
             font-family: 'Inter', sans-serif;
@@ -103,9 +104,9 @@
         .remember-me {
             display: flex; /* Aligns the checkbox and label in a row */
             align-items: center; /* Vertically aligns the checkbox and label */
-            margin-top: 15px; /* Adds space above the "Remember Me" section */
+            margin-top: 20px; /* Adds space above the "Remember Me" section */
             justify-content: flex-start;
-            margin-left: 8px /* Centers the checkbox and label */
+            margin-left: 11px /* Centers the checkbox and label */
         }
 
         .remember-me-checkbox {
@@ -131,7 +132,7 @@
             font-weight: 500; /* Bold text for emphasis */
             font-family: 'Inter', sans-serif;
             border: none; /* Removes default border */
-            border-radius: 5px; /* Adds rounded corners for consistency */
+            border-radius: 30px; /* Adds rounded corners for consistency */
             cursor: pointer; /* Adds a pointer cursor on hover */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
         }
@@ -146,7 +147,7 @@
 <body>
     <div class="sign-in-container">
         <img src="images/image_4.png" alt="Centered Image">
-        <p>Welcome to myAttendance.</p>
+        <p>Welcome to PMMS!</p>
         <div class="horizontal-line"></div>
         <div class="text-input-row id-input-row">
             <input type="text" class="text-input" placeholder="ID">
@@ -155,16 +156,18 @@
             <input type="password" class="text-input" id="password-input" placeholder="Password">
             <span class="password-toggle" onclick="togglePasswordVisibility()"></span>
         </div>
-        
-        <a href="#" class="forgot-password-link">Forgot Password?</a>
 
         <div class="remember-me">
             <input type="checkbox" id="remember-me-checkbox" class="remember-me-checkbox">
             <label for="remember-me-checkbox" class="remember-me-label">Remember Me</label>
         </div>
 
-        <button class="sign-in-button">Sign In</button>
+        <a href="#" class="forgot-password-link">Forgot Password?</a>
+
         
+
+        <button class="sign-in-button" onclick="window.location.href='homePage.html'">Log In</button>
+
     </div>
     <script>
         function togglePasswordVisibility() {
