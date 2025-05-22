@@ -1,22 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Homepage</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <title>Homepage</title>
 </head>
 <body>
-    <div class="image-container">
-        <img src="images/Frame_2.png" alt="Logo" class="logo-image">
-    </div>
-    <div class="nav-container">
-        <a href="#" class="nav-link">Program Management</a>
-        <a href="#" class="nav-link">Participants</a>
-        <a href="#" class="nav-link">Expenses</a>
-        <a href="#" class="nav-link">Reports</a>
-    </div>
-</body>
+  <div class="main-layout">
+    
+    <!-- Static Sidebar -->
+    <nav class="sidebar">
+        <!-- Small Logo -->
+        <div class="logo-container">
+            <img src="images/Frame 2.png" alt="PMMS Logo" class="logo">
+        </div>
 
-</html>
+        <!-- Navigation Menu with Icons -->
+        <ul class="nav-menu">
+            <li><i class="fas fa-home"></i><a href="#">Dashboard</a></li>
+            <li><i class="fas fa-calendar-alt"></i><a href="#">Program History</a></li>
+            <li><i class="fas fa-comments"></i><a href="#">Learn More</a></li>
+            <li><i class="fas fa-cog"></i><a href="#">Settings</a></li>
+        </ul>
+    </nav>
+
+    <div class="user-profile">
+        <div class="avatar"></div>
+        <span class="username">Username</span>
+        <i class="fas fa-chevron-down"></i>
+    
+    </div>
+
+    <!-- Content Area -->
+    <div class="dash-container">
+      <div class="welcome-text">
+        <h1>Welcome to PMMS!</h1>
+      </div>
+
+      <div class="ask-user">
+        <h5>Looking for something?</h5>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="search-bar-container">
+        <div class="search-input-wrapper">
+            <div class="search-icon">
+                <img src="images/search-svgrepo-com 1.svg" alt="Search Icon" class="search-icon">
+            </div>
+          <input type="text" class="search-input" placeholder="Search programs...">
+        </div>
+      </div>
+
+      <!-- Categories -->
+      <div class="categories">
+        <h5>Categories</h5>
+      </div>
+
+      <!-- Horizontally Scrollable Cards -->
+      <div class="category-scroll">
+        <div class="category-card">
+          <div class="card-label">Upcoming Programs</div>
+        </div>
+        <div class="category-card">
+          <div class="card-label">Ongoing Programs</div>
+        </div>
+        <div class="category-card">
+          <div class="card-label">Finished Programs</div>
+        </div>
+        <div class="category-card">
+          <div class="card-label">Connect with Others</div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</body>

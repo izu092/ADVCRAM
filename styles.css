@@ -1,89 +1,186 @@
-html, body {
-    height: 100%;
-    margin: 0;
-    font-family: 'Inter', sans-serif; /* Sets Inter as the default font */
-}
-
 body {
-    background-image: url('images/Bg_1.png'); /* Ensure the file path is correct */
-    background-size: 100% 100%; /* Makes the image fit within the screen */
-    background-repeat: no-repeat; 
-    background-position: center;
-    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #ffffff;
+  overflow-x: hidden;
 }
 
-.auth-container {
-    position: fixed; /* Keeps the buttons visible */
-    top: 25px; /* Distance from the top */
-    right: 30px; /* Aligns both Sign In and Sign Up with the right edge */
-    display: flex; /* Places the Sign In and Sign Up side by side */
-    align-items: center; /* Vertically aligns both items */
-    gap: 25px; /* Adds spacing between the two elements */
+.main-layout {
+  display: flex;
+  height: 100vh;
 }
 
-.sign-in-link {
-    font-size: 12px;
-    font-weight: 400;
-    font-family: 'Inter', sans-serif;
-    color: #ffffff;
-    text-decoration: none; /* Removes underline */
-    cursor: pointer;
+/* Static Sidebar */
+.sidebar {
+  width: 300px;
+  background-color: #116A7B;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  height: 100vh;
+  position: relative; /* Not fixed/sticky — stays static */
 }
 
-.sign-in-link:hover {
-    color: #52B9F3; /* Adds a hover effect */
+/* Sidebar Logo */
+.logo-container {
+  text-align: left;
+  margin-bottom: 40px;
 }
 
-.sign-up-button {
-    padding: 10px 20px; /* Adds some spacing inside the button */
-    background-color: #52B9F3; /* Button background color */
-    color: white; /* Button text color */
-    font-size: 12px; /* Text size */
-    font-family: 'Inter', sans-serif;
-    font-weight: 400; /* Text weight */
-    border: none; /* Removes default border */
-    border-radius: 30px; /* Adds rounded corners */
-    cursor: pointer; /* Adds a pointer cursor on hover */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+.logo {
+  width: 90px;
+  height: auto;
 }
 
-.sign-up-button:hover {
-    background-color: #035c90; /* Slightly darken the button on hover */
+/* Nav Menu Styling */
+.nav-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-left: 30px;
 }
 
-.nav-container {
-    position: fixed; /* Keeps it visible at the top */
-    top: 35px; /* Distance from the top */
-    left: 50%; /* Centers the container horizontally */
-    transform: translateX(-50%); /* Adjusts for perfect centering */
-    display: flex; /* Places the links in a row */
-    gap: 45px; /* Adds space between the links */
-    z-index: 1; /* Ensures it stays above other elements */
+.nav-menu li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 10px;
+  color: white;
 }
 
-.nav-link {
-    font-size: 12px; /* Font size for the links */
-    font-weight: 400;
-    font-family: 'Inter', sans-serif;
-    color: #ffffff; /* White text */
-    text-decoration: none; /* Removes underline */
-    cursor: pointer;
+.nav-menu li i {
+  font-size: 16px;
 }
 
-.nav-link:hover {
-    color: #52B9F3; /* Hover effect for interactivity */
+.nav-menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
 }
 
-.image-container {
-    position: fixed; /* Keeps the image visible at the top left */
-    top: 30px; /* Aligns with the top of the page */
-    left: 35px; /* Aligns the image on the left side */
-    z-index: 1; /* Ensures it stays above other content */
+.sidebar h2 {
+  margin-bottom: 30px;
 }
 
-.logo-image {
-    width: 90px; /* Adjust width to fit your design */
-    height: auto; /* Maintains the image's aspect ratio */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
 }
 
+.sidebar ul li {
+  margin-bottom: 20px;
+}
 
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Right Content */
+.dash-container {
+    margin-top: 40px;
+  flex-grow: 1;
+  padding: 30px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Search Bar */
+.ask-user {
+  margin-bottom: 5px;
+}
+
+.search-bar-container {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: #C2DEDC;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.search-icon {
+  margin-right: 15px;
+  margin-left: 5px;
+  width: 15px;
+  height: 20px;
+}
+
+.search-input {
+    background-color: #C2DEDC;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+}
+
+/* Category Section */
+.categories {
+  margin-top: 30px;
+}
+
+/* Horizontal Card Scroll */
+.category-scroll {
+  display: flex;
+  gap: 23px;
+  overflow-x: auto;
+  padding: 10px 0;
+  scroll-behavior: smooth;
+}
+
+.category-card {
+  min-width: 381px;
+  height: 381px;
+  background-color: #e0e0e0;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.card-label {
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+  color: rgb(0, 0, 0);
+  border-radius: 12px;
+}
+
+.user-profile {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 10;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  background-color: #116A7B;
+  border-radius: 50%;
+}
+
+.username {
+  font-weight: 500;
+  color: #000;
+}
+
+.user-profile i {
+  color: #333;
+  font-size: 12px;
+}
