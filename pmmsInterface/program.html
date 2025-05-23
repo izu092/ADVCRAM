@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Program History - PMMS</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .main-layout {
+      display: flex;
+      width: 100%;
+    }
+
+    #sidebar-container {
+      width: 300px;
+      flex-shrink: 0;
+    }
+
+    .dash-container {
+      flex-grow: 1;
+    }
+
+    .main-content {
+      font-size: 19px;
+      padding: 2rem;
+      box-sizing: border-box;
+      margin-left: 300px; /* match sidebar width */
+      color: #333;
+    }
+
+    .main-content h1 {
+      margin-bottom: 1rem;
+    }
+
+    .program-history-list {
+      list-style: inside disc;
+      font-size: 17px;
+      line-height: 1.6;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-layout">
+
+    <!-- Sidebar inlined here exactly as in sidebar.html -->
+    <nav class="sidebar" id="sidebar-container">
+      <div class="logo-container">
+        <img src="images/Frame 2.png" alt="PMMS Logo" class="logo">
+      </div>
+
+      <ul class="nav-menu">
+        <li class="nav-upper">
+          <ul>
+            <li><i class="fas fa-home"></i><a href="./homePage.html">Dashboard</a></li>
+            <li><i class="fas fa-calendar-alt"></i><a href="./program.html">Program History</a></li>
+          </ul>
+        </li>
+        <li class="nav-lower">
+          <ul>
+            <li><i class="fas fa-comments"></i><a href="./learnMore.html">Learn More</a></li>
+            <li><i class="fas fa-cog"></i><a href="./settings.html">Settings</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="dash-container">
+      <div class="main-content">
+        <h1>Program History</h1>
+        <p>Below is the list of programs handled or monitored:</p>
+        <ul class="program-history-list">
+          <li>Youth Leadership Training - 2023</li>
+          <li>Sports Development Program - 2022</li>
+          <li>Environmental Awareness Campaign - 2021</li>
+          <li>Health and Wellness Drive - 2021</li>
+          <li>Educational Outreach Initiative - 2020</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
