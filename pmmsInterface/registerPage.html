@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <title>Register Page</title>
+  <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Inter', sans-serif; /* Sets Inter as the default font */
+            background-color: #f0f0f0; /* Optional background for the Sign In page */
+            display: flex; /* Centers the container */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .register-container {
+            background-color: white; /* White container background */
+            padding: 20px; /* Adds space inside the container */
+            max-width: 600px; /* Maximum width for the container */
+            width: 100%; /* Makes the container responsive */
+            border-radius: 16px; /* Rounded corners */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            text-align: center; /* Centers text and image */
+        }
+
+        .register-container img {
+            margin-top: 10px;
+            max-width: 50%; /* Ensures image is responsive */
+            height: auto; /* Maintains aspect ratio */
+        }
+
+        .register-container p {
+            font-size: 14px; /* Text size */
+            font-weight: 400; /* Bold text */
+            font-family: 'Inter', sans-serif;
+            color: #4b5768; /* Text color */
+            margin-top: 30px; /* Adds space between image and text */
+        }
+
+        .horizontal-line {
+            width: 390px; /* Sets the width of the line */
+            height: 3px; /* Sets the height of the line */
+            background-color: #dee4ed; /* Sets the line color */
+            margin: 15px auto 0; /* Centers the line and adds spacing */
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 370px; /* Matches the width of the horizontal line */
+            height: 15px; /* Sets the height of the text input */
+            padding: 10px; /* Adds padding inside the input */
+            font-size: 14px; /* Sets text size */
+            font-family: 'Inter', sans-serif;
+            font-weight: 400; /* Normal text weight */
+            color: #333333; /* Text color */
+            border: 1px solid #dee4ed; /* Border styling */
+            border-radius: 10px; /* Rounded corners */
+            outline: none;
+        }
+
+        .email-input-row {
+            margin-top: 20px; /* Adds spacing above the input row */
+        }
+
+        .username-input-row {
+            margin-top: 10px; /* Adds spacing above the input row */
+        }
+
+        .password-input-row {
+            margin-top: 10px; /* Adds spacing above the input row */
+        }
+
+        .confirmPassword-input-row {
+            margin-top: 10px;
+            margin-bottom: 20px; /* Adds spacing above the input row */
+        }
+
+        button {
+            margin-top: 1px;
+            width: 390px;
+            padding: 10px;
+            background-color: #52B9F3;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #035c90;
+        }
+
+        .generated-id {
+            margin-top: 15px;
+            background-color: #f8f8f8;
+            padding: 10px;
+            border: 1px dashed #999;
+            text-align: center;
+            display: none;
+            width: 370px;
+            border-radius: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 14px;
+        }
+
+        .login-button {
+            margin-top: 10px;
+            display: none;
+            background-color: #52B9F3;
+            width: 390px;
+            padding: 10px;
+            border: none;
+            border-radius: 30px;
+            font-size: 14px;
+            color: white;
+            cursor: pointer;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .login-button:hover {
+            background-color: #035c90;
+        }
+  </style>
+</head>
+<body>
+
+  <div class="register-container">
+    <img src="images/image_4.png" alt="Centered Image">
+    <p>Create an Account</p>
+    <div class="horizontal-line"></div>
+    <form id="registerForm">
+        <div class="email-input-row">
+            <input type="email" id="email" placeholder="Email" required />
+        </div>
+        <div class="username-input-row">
+            <input type="text" id="username" placeholder="Username" required />
+        </div>
+        <div class="password-input-row">
+            <input type="password" id="password" placeholder="Password" required />    
+        </div>
+        <div class="confirmPassword-input-row">
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" required />    
+        </div>
+      <button type="submit" id="createAccountBtn">Register</button>
+    </form>
+
+    <div id="generatedId" class="generated-id"></div>
+    <button id="goToLogin" class="login-button" onclick="location.href='loginPage.html'">Go to Log In</button>
+
+    <script>
+        function generateRandomID(length = 10) {
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let id = '';
+        for (let i = 0; i < length; i++) {
+            id += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        return id;
+        }
+
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+
+        if (password !== confirmPassword) {
+            alert('Passwords do not match!');
+            return;
+        }
+
+        const generatedId = generateRandomID();
+        const idDisplay = document.getElementById('generatedId');
+        idDisplay.textContent = `Your Login ID: ${generatedId}`;
+        idDisplay.style.display = 'block';
+
+        const loginButton = document.getElementById('goToLogin');
+        loginButton.style.display = 'block';
+        });
+    </script>
+  </div>
+
+  <script src="registerPage.js"></script>
+
+</body>
+</html>

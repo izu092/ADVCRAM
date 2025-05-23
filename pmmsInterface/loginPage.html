@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Inter', sans-serif; /* Sets Inter as the default font */
+            background-color: #f0f0f0; /* Optional background for the Sign In page */
+            display: flex; /* Centers the container */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sign-in-container {
+            background-color: white; /* White container background */
+            padding: 20px; /* Adds space inside the container */
+            max-width: 600px; /* Maximum width for the container */
+            width: 100%; /* Makes the container responsive */
+            border-radius: 16px; /* Rounded corners */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            text-align: center; /* Centers text and image */
+        }
+
+        .sign-in-container img {
+            margin-top: 10px;
+            max-width: 50%; /* Ensures image is responsive */
+            height: auto; /* Maintains aspect ratio */
+        }
+
+        .sign-in-container p {
+            font-size: 14px; /* Text size */
+            font-weight: 400; /* Bold text */
+            font-family: 'Inter', sans-serif;
+            color: #4b5768; /* Text color */
+            margin-top: 30px; /* Adds space between image and text */
+        }
+
+        .horizontal-line {
+            width: 390px; /* Sets the width of the line */
+            height: 3px; /* Sets the height of the line */
+            background-color: #dee4ed; /* Sets the line color */
+            margin: 15px auto 0; /* Centers the line and adds spacing */
+        }
+
+        .text-input-row.id-input-row {
+            margin-top: 27px; /* Creates space between the line and ID container */
+        }
+
+        .text-input-row {
+            margin-top: 20px; /* Adds spacing above the input row */
+        }
+
+        .text-input {
+            width: 370px; /* Matches the width of the horizontal line */
+            height: 15px; /* Sets the height of the text input */
+            padding: 10px; /* Adds padding inside the input */
+            font-size: 14px; /* Sets text size */
+            font-family: 'Inter', sans-serif;
+            font-weight: 400; /* Normal text weight */
+            color: #333333; /* Text color */
+            border: 1px solid #dee4ed; /* Border styling */
+            border-radius: 10px; /* Rounded corners */
+            outline: none; /* Removes default focus outline */
+        }
+
+        .text-input:focus {
+            border-color: #52B9F3; /* Highlight border on focus */
+            box-shadow: 0 0 4px rgba(82, 185, 243, 0.5);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .password-toggle {
+            position: absolute;
+            top: 10px; /* Adjusts vertical alignment within the input */
+            right: 10px; /* Positions it on the right side of the input */
+            cursor: pointer;
+            font-size: 14px; /* Ensures good visibility */
+            color: #333333;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .forgot-password-link {
+            display: block; /* Makes the link behave like a block element */
+            margin-top: 25px; /* Adds space above the link */
+            font-size: 14px; /* Text size */
+            font-weight: 400; /* Normal text weight */
+            font-family: 'Inter', sans-serif;
+            color: #52B9F3; /* Link color */
+            text-decoration: none; /* Removes underline */
+            text-align: center; /* Centers the link */
+            cursor: pointer; /* Adds pointer cursor on hover */
+        }
+
+        .forgot-password-link:hover {
+            text-decoration: underline; /* Adds underline on hover for interactivity */
+        }
+
+        .remember-me {
+            display: flex; /* Aligns the checkbox and label in a row */
+            align-items: center; /* Vertically aligns the checkbox and label */
+            margin-top: 20px; /* Adds space above the "Remember Me" section */
+            justify-content: flex-start;
+            margin-left: 11px /* Centers the checkbox and label */
+        }
+
+        .remember-me-checkbox {
+            margin-right: 5px; /* Adds spacing between the checkbox and the label */
+            width: 15px; /* Adjusts checkbox size */
+            height: 15px; /* Matches checkbox size to width */
+        }
+
+        .remember-me-label {
+            font-size: 14px; /* Sets label text size */
+            font-weight: 400; /* Normal font weight */
+            color: #333333; /* Text color */
+        }
+
+        .sign-in-button {
+            width: 390px; /* Matches the width of the password container */
+            height: 40px; /* Sets the button height */
+            margin-top: 25px; /* Adds spacing above the button */
+            margin-bottom: 20px;
+            background-color: #52B9F3; 
+            color: white; /* White text */
+            font-size: 14px; /* Sets text size */
+            font-weight: 500; /* Bold text for emphasis */
+            font-family: 'Inter', sans-serif;
+            border: none; /* Removes default border */
+            border-radius: 30px; /* Adds rounded corners for consistency */
+            cursor: pointer; /* Adds a pointer cursor on hover */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+
+        .sign-in-button:hover {
+            background-color: #035c90; 
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="sign-in-container">
+        <img src="images/image_4.png" alt="Centered Image">
+        <p>Welcome to PMMS!</p>
+        <div class="horizontal-line"></div>
+        <div class="text-input-row id-input-row">
+            <input type="text" class="text-input" placeholder="ID">
+        </div>
+        <div class="text-input-row">
+            <input type="password" class="text-input" id="password-input" placeholder="Password">
+            <span class="password-toggle" onclick="togglePasswordVisibility()"></span>
+        </div>
+
+        <div class="remember-me">
+            <input type="checkbox" id="remember-me-checkbox" class="remember-me-checkbox">
+            <label for="remember-me-checkbox" class="remember-me-label">Remember Me</label>
+        </div>
+
+        <a href="#" class="forgot-password-link">Forgot Password?</a>
+
+        
+
+        <button class="sign-in-button" onclick="window.location.href='homePage.html'">Log In</button>
+
+    </div>
+    <script>
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('password-input');
+            const currentType = passwordInput.getAttribute('type');
+
+            if (currentType === 'password') {
+                passwordInput.setAttribute('type', 'text'); // Show password
+            } else {
+                passwordInput.setAttribute('type', 'password'); // Hide password
+            }
+        }
+    </script>
+</body>
+</html>

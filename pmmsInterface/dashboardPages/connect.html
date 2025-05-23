@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Connect with Others - PMMS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background-color: #f5f7fa;
+      color: #333;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    h1 {
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: #007BFF;
+      text-align: center;
+    }
+
+    .user-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 1.5rem 2rem;
+      margin-bottom: 1.5rem;
+      transition: box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .user-card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .user-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: #ccc;
+      background-size: cover;
+      background-position: center;
+      flex-shrink: 0;
+    }
+
+    .user-info h2 {
+      margin: 0;
+      font-weight: 600;
+      font-size: 1.25rem;
+    }
+    .user-info p {
+      margin: 0.25rem 0 0 0;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .program-history {
+      margin-top: 1rem;
+    }
+    .program-history h3 {
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      font-size: 1rem;
+      border-bottom: 2px solid #007BFF;
+      display: inline-block;
+      padding-bottom: 3px;
+    }
+    .program-list {
+      list-style-type: disc;
+      padding-left: 1.25rem;
+      margin: 0;
+    }
+    .program-list li {
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <h1>Connect with Others</h1>
+
+  <div class="user-card">
+    <div class="user-header">
+      <div class="avatar" style="background-image: url('https://i.pravatar.cc/60?img=12');"></div>
+      <div class="user-info">
+        <h2>Jane Smith</h2>
+        <p>janesmith@example.com</p>
+      </div>
+    </div>
+    <div class="program-history">
+      <h3>Program History</h3>
+      <ul class="program-list">
+        <li>Youth Leadership Workshop - 2023</li>
+        <li>Community Health Drive - 2022</li>
+        <li>Environmental Awareness Campaign - 2021</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="user-card">
+    <div class="user-header">
+      <div class="avatar" style="background-image: url('https://i.pravatar.cc/60?img=5');"></div>
+      <div class="user-info">
+        <h2>Mark Johnson</h2>
+        <p>markjohnson@example.com</p>
+      </div>
+    </div>
+    <div class="program-history">
+      <h3>Program History</h3>
+      <ul class="program-list">
+        <li>Sports Development Camp - 2023</li>
+        <li>Educational Outreach Program - 2022</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="user-card">
+    <div class="user-header">
+      <div class="avatar" style="background-image: url('https://i.pravatar.cc/60?img=8');"></div>
+      <div class="user-info">
+        <h2>Maria Garcia</h2>
+        <p>maria.garcia@example.com</p>
+      </div>
+    </div>
+    <div class="program-history">
+      <h3>Program History</h3>
+      <ul class="program-list">
+        <li>Arts and Culture Festival - 2023</li>
+        <li>Health and Wellness Seminar - 2021</li>
+        <li>Environmental Cleanup Drive - 2020</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
