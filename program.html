@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Learn More - PMMS</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .main-layout {
+      display: flex;
+      width: 100%;
+    }
+
+    #sidebar-container {
+      width: 250px;
+      flex-shrink: 0;
+    }
+
+    .dash-container {
+      flex-grow: 1;
+    }
+
+    .main-content {
+      font-size: 19px;
+      padding: 2rem;
+      box-sizing: border-box;
+      margin-left: 250px;
+    }
+
+    .program-item {
+      background-color: #f9f9f9;
+      border-left: 4px solid #007BFF;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      color: #444;
+    }
+
+    .main-content .no-programs {
+      font-style: italic;
+      color: #666;
+      text-align: center;
+      padding: 2rem 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-layout">
+    <div id="sidebar-container"></div>
+
+    <div class="dash-container">
+      <div class="main-content">
+        <h2>Programs Attended</h2>
+        <section class="program-history">
+          <div class="program-item">Youth Leadership Workshop - March 2023</div>
+          <div class="program-item">Community Health Drive - November 2022</div>
+          <div class="program-item">Environmental Awareness Campaign - July 2021</div>
+          <div class="program-item">Sports Development Camp - January 2021</div>
+          <div class="program-item">Educational Outreach Program - December 2020</div>
+          <!-- Optional: Display when no programs -->
+          <!-- <div class="no-programs">No programs found.</div> -->
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    fetch('sidebar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('sidebar-container').innerHTML = data;
+      });
+  </script>
+</body>
+</html>
