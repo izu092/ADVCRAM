@@ -12,6 +12,8 @@
       margin: 0;
       display: flex;
       font-family: 'Inter', sans-serif;
+      background-color: #f9fafb;
+      color: #333;
     }
 
     .main-layout {
@@ -26,17 +28,34 @@
 
     .settings-container {
       flex-grow: 1;
-      padding: 2rem;
+      padding: 2.5rem 3rem 120rem; /* Increase bottom padding */
       box-sizing: border-box;
       margin-left: 250px;
+      background-color: #fff;
+      box-shadow: inset 1px 0 0 #e0e0e0;
+      min-height: 100vh; /* This is okay to keep if your content is long */
     }
 
+
+
     .settings-section {
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #e5e7eb;
     }
 
     .settings-section h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: #111827;
+    }
+
+    .settings-section label {
+      display: block;
       margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: #374151;
     }
 
     .settings-section input[type="text"],
@@ -44,36 +63,98 @@
     .settings-section input[type="password"],
     .settings-section input[type="file"] {
       width: 100%;
-      padding: 0.5rem;
-      margin-top: 0.5rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1.25rem;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      background-color: #f9fafb;
+      transition: border-color 0.2s;
+      font-size: 1rem;
+    }
+
+    input[type="checkbox"] {
+      vertical-align: middle; /* or baseline, or slightly adjust with margin */
+    }
+
+
+    .settings-section input:focus {
+      outline: none;
+      border-color: #3b82f6;
+      background-color: #fff;
+    }
+
+    .settings-section p {
+      margin: 0.75rem 0;
+      font-size: 0.95rem;
+      color: #4b5563;
     }
 
     .toggle-group {
       display: flex;
-      gap: 1rem;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      margin-top: 1rem;
     }
 
     .toggle-group label {
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      font-weight: 500;
+      color: #374151;
+      font-size: 0.95rem;
     }
 
-    .btn {
+    .btn.logout {
+      display: block;              /* Makes the button behave like a block element */
+      width: 100%;                 /* Full width of the parent container */
+      text-align: center;          /* Centers the text inside the button */
+      margin: 2rem 0 3rem;       /* Centers the button horizontally with top margin */
       padding: 0.5rem 1rem;
-      background-color: #007BFF;
-      color: #fff;
+      background-color: #52B9F3;
+      color: white;
       border: none;
-      border-radius: 5px;
+      border-radius: 16px;
       cursor: pointer;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #035c90;
     }
 
     .btn.danger {
-      background-color: #dc3545;
+      background-color: #ef4444;
+      padding: 0.5rem 1rem;
+      margin-bottom: 10px;
+      margin-top: 15px;
     }
+
+    .btn.danger:hover {
+      background-color: #dc2626;
+    }
+
+    input[type="checkbox"] {
+      width: 1rem;
+      height: 1rem;
+      accent-color: #3b82f6;
+    }
+
+    @media (max-width: 768px) {
+      .settings-container {
+        margin-left: 0;
+        padding: 2rem 1.25rem;
+      }
+
+      .toggle-group {
+        flex-direction: column;
+      }
+    }
+</style>
+
+
   </style>
 </head>
 <body>
@@ -108,10 +189,12 @@
         <input type="password">
         <label>Confirm New Password</label>
         <input type="password">
-        <div>
-          <input type="checkbox" id="showPassword">
+        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+          <input type="checkbox" id="showPassword" style="vertical-align: middle;">
           <label for="showPassword">Show Password</label>
         </div>
+
+
         <p>Password strength: <strong>Medium</strong></p>
       </div>
 
@@ -125,12 +208,13 @@
       </div>
 
       <div class="settings-section">
-        <h2>Delete Account</h2>
+        <h2>Account Deletion</h2>
         <p>This action cannot be undone. All your data will be permanently deleted.</p>
-        <button class="btn danger">Delete My Account</button>
+        <button class="btn danger">Delete Account</button>
       </div>
 
-      <button class="btn">Log Out</button>
+      <button class="btn logout">Logout</button>
+
     </div>
   </div>
 
@@ -146,6 +230,21 @@
         input.type = this.checked ? 'text' : 'password';
       });
     });
+
+    const fileInput = document.querySelector('input[type="file"]');
+
+    fileInput.addEventListener('change', function () {
+      const file = this.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        localStorage.setItem('profileImage', e.target.result); // Save Base64 image
+        alert("Profile image saved!");
+      };
+      reader.readAsDataURL(file);
+    });
+
   </script>
 </body>
 </html>

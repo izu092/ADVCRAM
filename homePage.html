@@ -37,9 +37,10 @@
     </nav>
 
     <a href="profile.html" class="user-profile" style="text-decoration: none; color: inherit;">
-      <div class="avatar"></div>
+      <img id="avatar-img" class="avatar" alt="User Avatar" />
       <span class="username">Username</span>
     </a>
+
 
 
     <!-- Content Area -->
@@ -94,4 +95,15 @@
 
     </div>
   </div>
+
+  <script>
+    const avatarImg = document.getElementById('avatar-img');
+    const storedImage = localStorage.getItem('profileImage');
+    if (storedImage) {
+      avatarImg.src = storedImage;
+    } else {
+      avatarImg.src = 'images/default-avatar.png'; // fallback image
+    }
+  </script>
+
 </body>
