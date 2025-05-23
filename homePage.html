@@ -23,25 +23,24 @@
         <ul class="nav-menu">
           <li class="nav-upper">
             <ul>
-              <li><i class="fas fa-home"></i><a href="#">Dashboard</a></li>
-              <li><i class="fas fa-calendar-alt"></i><a href="#">Program History</a></li>
+              <li><i class="fas fa-home"></i><a href="./homePage.html">Dashboard</a></li>
+              <li><i class="fas fa-calendar-alt"></i><a href="./program.html">Program History</a></li>
             </ul>
           </li>
           <li class="nav-lower">
             <ul>
-              <li><i class="fas fa-comments"></i><a href="#">Learn More</a></li>
-              <li><i class="fas fa-cog"></i><a href="#">Settings</a></li>
+              <li><i class="fas fa-comments"></i><a href="./learnMore.html">Learn More</a></li>
+              <li><i class="fas fa-cog"></i><a href="./settings.html">Settings</a></li>
             </ul>
           </li>
         </ul>
     </nav>
 
-    <div class="user-profile">
-        <div class="avatar"></div>
-        <span class="username">Username</span>
-        <i class="fas fa-chevron-down"></i>
-    
-    </div>
+    <a href="profile.html" class="user-profile" style="text-decoration: none; color: inherit;">
+      <div class="avatar"></div>
+      <span class="username">Username</span>
+    </a>
+
 
     <!-- Content Area -->
     <div class="dash-container">
@@ -68,21 +67,29 @@
         <h5>Categories</h5>
       </div>
 
-      <!-- Horizontally Scrollable Cards -->
       <div class="category-scroll">
-        <div class="category-card">
-          <div class="card-label">Upcoming Programs</div>
-        </div>
-        <div class="category-card">
-          <div class="card-label">Ongoing Programs</div>
-        </div>
-        <div class="category-card">
-          <div class="card-label">Finished Programs</div>
-        </div>
-        <div class="category-card">
-          <div class="card-label">Connect with Others</div>
-        </div>
+        <a href="./dashboardPages/upcoming.html" class="category-card-link">
+          <div class="category-card">
+            <div class="card-label">Upcoming Programs</div>
+          </div>
+        </a>
+        <a href="./dashboardPages/ongoing.html" class="category-card-link">
+          <div class="category-card">
+            <div class="card-label">Ongoing Programs</div>
+          </div>
+        </a>
+        <a href="./dashboardPages/finished.html" class="category-card-link">
+          <div class="category-card">
+            <div class="card-label">Finished Programs</div>
+          </div>
+        </a>
+        <a href="./dashboardPages/connect.html" class="category-card-link">
+          <div class="category-card">
+            <div class="card-label">Connect with Others</div>
+          </div>
+        </a>
       </div>
+
 
 
     </div>

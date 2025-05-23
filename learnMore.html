@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Learn More - PMMS</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .main-layout {
+      display: flex;
+      width: 100%;
+    }
+
+    #sidebar-container {
+      width: 250px;
+      flex-shrink: 0;
+    }
+
+    .dash-container {
+      flex-grow: 1;
+    }
+
+    .main-content {
+      font-size: 19px;
+      padding: 2rem;
+      box-sizing: border-box;
+      margin-left: 250px; /* Ensures the content is not behind the sidebar */
+    }
+
+    .main-content p {
+      font-size: 17px;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-layout">
+    <div id="sidebar-container"></div>
+
+    <div class="dash-container">
+      <div class="main-content">
+        <h1>Learn More About PMMS</h1>
+        <p>The Program Monitoring Management System (PMMS) is a purpose-built digital platform developed to support the Sangguniang Kabataan (SK) of San Francisco, Naga, Camarines Sur in the effective administration of their community programs. Recognizing the limitations of traditional, paper-based tracking methods, PMMS offers a modern solution tailored to the unique operational needs of local youth governance.</p>
+        <p>At its core, PMMS serves as a centralized and secure system that enables SK officials to seamlessly plan, organize, monitor, and evaluate various community initiatives. These range from youth-oriented activities—such as sports leagues and leadership training—to vital public services like health campaigns, environmental drives, educational outreach, and livelihood development programs.</p>
+        <p>The system empowers both administrators and community members. For SK officers, PMMS streamlines the entire program lifecycle—from registration and budget tracking to attendance monitoring and performance evaluation—thereby minimizing human error, reducing redundant paperwork, and saving time. For constituents, it offers a user-friendly portal where they can browse upcoming events, view details of ongoing projects, and reflect on completed programs with documented outcomes and updates.</p>
+        <p>Beyond convenience, PMMS promotes transparency, accountability, and accessibility. By digitizing records and standardizing reporting, it safeguards critical data from physical damage, loss, or manipulation. Real-time updates ensure that stakeholders are always informed, while data analytics features offer valuable insights to guide future planning and decision-making.</p>
+        <p>Ultimately, PMMS transforms how the SK connects with its community. It fosters greater civic engagement, ensures efficient program execution, and supports a more informed and empowered citizenry—laying a stronger foundation for inclusive, sustainable development at the grassroots level.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    fetch('sidebar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('sidebar-container').innerHTML = data;
+      });
+  </script>
+</body>
+</html>

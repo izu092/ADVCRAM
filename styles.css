@@ -228,3 +228,82 @@ body {
   color: #333;
   font-size: 12px;
 }
+
+.category-card-link {
+  text-decoration: none;
+  display: block;
+}
+
+/* Settings */
+#sidebar-container {
+  width: 250px;
+  flex-shrink: 0;
+  position: fixed;         /* Keeps the sidebar static */
+  height: 100vh;           /* Full height of viewport */
+  overflow: hidden;        /* Removes scrolling */
+  background-color: #fff;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+}
+
+
+.settings-content {
+  margin-left: 250px;       /* Matches the sidebar width */
+  padding: 2rem;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+  flex-grow: 1;
+}
+
+
+.settings-content h1 {
+  font-size: 28px;
+  margin-bottom: 1.5rem;
+}
+
+.settings-section {
+  background: white;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.settings-section h2 {
+  font-size: 22px;
+  margin-bottom: 1rem;
+}
+
+.settings-section form {
+  display: flex;
+  flex-direction: column;
+}
+
+.settings-section label {
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.settings-section input {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.settings-section button {
+  margin-top: 1.5rem;
+  padding: 0.9rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.settings-section button:hover {
+  background-color: #3e8e41;
+}
